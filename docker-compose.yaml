@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  activemq:
+    restart: always
+    container_name: activemq
+    image: webcenter/activemq:5.14.3
+    ports:
+      - "8161:8161"
+      - "61616:61616"
+      - "61613:61613"
+    environment:
+      - ACTIVEMQ_ADMIN_LOGIN=admin
+      - ACTIVEMQ_ADMIN_PASSWORD=9fQV62Zx0t3qQT!
+
+  fmp:
+    restart: always
+    container_name: fmp
+    image: fmp:1
+    ports:
+      - "8081:8081"
+      - "8082:8082"
+
+  gpl:
+    restart: always
+    container_name: gpl
+    image: gpl:1
+    ports:
+      - "8085:8085"
+      - "8092:8092"
+
